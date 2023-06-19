@@ -1,11 +1,11 @@
-let slideIndex = 0;
+var slideIndex = 0;
 
 showSlide();
 
 var timer = setInterval(showSlide, 2000);
 
-let slideContainer = document.getElementById('slideshow-container');
-let slideControl = document.getElementById('slide-control');
+var slideContainer = document.getElementById('slideshow-container');
+var slideControl = document.getElementById('slide-control');
 
 slideContainer.onmouseover = function () {
 	clearInterval(timer);
@@ -16,22 +16,22 @@ slideControl.onmouseover = function () {
 }
 
 slideContainer.onmouseleave = function () {
-	// timer = setInterval(showSlide, 2000);
+	timer = setInterval(showSlide, 2000);
 }
 
 slideControl.onmouseleave = function () {
-	// timer = setInterval(showSlide, 2000);
+	timer = setInterval(showSlide, 2000);
 }
 
 function showSlide() {
-	let i;
-	let slides = document.getElementsByClassName('slide-item');
-	let dots = document.getElementsByClassName('dot');
-	for (const element of slides) {
-		element.style.display = 'none';
+	var i;
+	var slides = document.getElementsByClassName('slide-item');
+	var dots = document.getElementsByClassName('dot');
+	for (var i = 0; i < slides.length; i++) {
+		slides[i].style.display = 'none';
 	}
-	for (const element of dots) {
-		element.className = element.className.replace(" active", "");
+	for (var i = 0; i < dots.length; i++) {
+		dots[i].className = dots[i].className.replace(" active", "");
 	}
 	slideIndex++;
 	if (slideIndex > slides.length) slideIndex = 1;
