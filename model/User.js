@@ -7,9 +7,6 @@ const User = sq.define("mda_clean", {
     allowNull: false,
     primaryKey: true,
   },
-  no: {
-    type: DataTypes.INTEGER,
-  },
   name: {
     type: DataTypes.STRING,
   },

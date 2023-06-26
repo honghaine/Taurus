@@ -23,38 +23,16 @@
             </div>
         </div>
         <div class="container">
-            <div class="card">
-                <div class="content">
-                    <div class="imgBx"><img src="/images/member1.jpg"></div>
-                    <div class="contentBx">
-                        <h3>Someone Famous<br><span>Creative Designer</span></h3>
+            <% for(const content of contents) {%>
+                <div class="card">
+                    <div class="content">
+                        <div class="imgBx"><img src="<%= content.color %>"></div>
+                        <div class="contentBx">
+                            <h3><%= content.name %><br><span>Creative Designer</span></h3>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="card">
-                <div class="content">
-                    <div class="imgBx"><img src="/images/member2.png"></div>
-                    <div class="contentBx">
-                        <h3>Someone Famous<br><span>Creative Designer</span></h3>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="content">
-                    <div class="imgBx"><img src="/images/member3.png"></div>
-                    <div class="contentBx">
-                        <h3>Someone Famous<br><span>Creative Designer</span></h3>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="content">
-                    <div class="imgBx"><img src="/images/member4.png"></div>
-                    <div class="contentBx">
-                        <h3>Someone Famous<br><span>Creative Designer</span></h3>
-                    </div>
-                </div>
-            </div>
+            <% } %>
         </div>
     </section>
 </body>
