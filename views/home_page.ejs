@@ -1,11 +1,11 @@
-<html>
+<!DOCTYPE html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="/styles/home_page.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="/styles/home_page.css">
 </head>
 
 <body scroll="no" style="overflow: hidden">
@@ -17,7 +17,7 @@
       <span style="color: orange">R</span>
     </a>
     <div class="navbar-right menu">
-      <a href="#" class="active">
+      <a href="home" class="active">
         Home
       </a>
       <a href="#">
@@ -26,7 +26,7 @@
       <a href="#">
         Career
       </a>
-      <a href="#">
+      <a href="ourteam">
         Our Team
       </a>
       <a href="#">
@@ -94,76 +94,75 @@
     </div>
   </div>
 
-      <!-- Home -->
-    <section class="home">
-      <div class="form_container">
-        <i class="uil uil-times form_close">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m13.41 12l4.3-4.29a1 1 0 1 0-1.42-1.42L12 10.59l-4.29-4.3a1 1 0 0 0-1.42 1.42l4.3 4.29l-4.3 4.29a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0l4.29-4.3l4.29 4.3a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.42Z"/></svg>
-        </i>
-        <!-- Login From -->
-        <div class="form login_form">
-          <form action="#">
-            <h2>Login</h2>
+  <!-- Home -->
+  <section class="home">
+    <div class="form_container">
+      <i class="uil uil-times form_close">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+          <path fill="currentColor"
+            d="m13.41 12l4.3-4.29a1 1 0 1 0-1.42-1.42L12 10.59l-4.29-4.3a1 1 0 0 0-1.42 1.42l4.3 4.29l-4.3 4.29a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0l4.29-4.3l4.29 4.3a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.42Z" />
+        </svg>
+      </i>
+      <!-- Login From -->
+      <div class="form login_form">
+        <form action="#">
+          <h2>Login</h2>
 
-            <div class="input_box">
-              <input type="email" placeholder="Enter your email" required />
-              <i class="uil uil-envelope-alt email"></i>
-            </div>
-            <div class="input_box">
-              <input
-                type="password"
-                placeholder="Enter your password"
-                required
-              />
-              <i class="uil uil-lock password"></i>
-              <i class="uil uil-eye-slash pw_hide"></i>
-            </div>
+          <div class="input_box">
+            <input type="email" placeholder="Enter your email" required />
+            <i class="uil uil-envelope-alt email"></i>
+          </div>
+          <div class="input_box">
+            <input type="password" placeholder="Enter your password" required />
+            <i class="uil uil-lock password"></i>
+            <i class="uil uil-eye-slash pw_hide"></i>
+          </div>
 
-            <div class="option_field">
-              <span class="checkbox">
-                <input type="checkbox" id="check" />
-                <label for="check">Remember me</label>
-              </span>
-              <a href="#" class="forgot_pw">Forgot password?</a>
-            </div>
+          <div class="option_field">
+            <span class="checkbox">
+              <input type="checkbox" id="check" />
+              <label for="check">Remember me</label>
+            </span>
+            <a href="#" class="forgot_pw">Forgot password?</a>
+          </div>
 
-            <button class="button">Login Now</button>
+          <button class="button">Login Now</button>
 
-            <div class="login_signup">
-              Don't have an account? <a href="#" id="signup">Signup</a>
-            </div>
-          </form>
-        </div>
-
-        <!-- Signup From -->
-        <div class="form signup_form">
-          <form action="#">
-            <h2>Signup</h2>
-
-            <div class="input_box">
-              <input type="email" placeholder="Enter your email" required />
-              <i class="uil uil-envelope-alt email"></i>
-            </div>
-            <div class="input_box">
-              <input type="password" placeholder="Create password" required />
-              <i class="uil uil-lock password"></i>
-              <i class="uil uil-eye-slash pw_hide"></i>
-            </div>
-            <div class="input_box">
-              <input type="password" placeholder="Confirm password" required />
-              <i class="uil uil-lock password"></i>
-              <i class="uil uil-eye-slash pw_hide"></i>
-            </div>
-
-            <button class="button">Signup Now</button>
-
-            <div class="login_signup">
-              Already have an account? <a href="#" id="login">Login</a>
-            </div>
-          </form>
-        </div>
+          <div class="login_signup">
+            Don't have an account? <a href="#" id="signup">Signup</a>
+          </div>
+        </form>
       </div>
-    </section>
+
+      <!-- Signup From -->
+      <div class="form signup_form">
+        <form action="#">
+          <h2>Signup</h2>
+
+          <div class="input_box">
+            <input type="email" placeholder="Enter your email" required />
+            <i class="uil uil-envelope-alt email"></i>
+          </div>
+          <div class="input_box">
+            <input type="password" placeholder="Create password" required />
+            <i class="uil uil-lock password"></i>
+            <i class="uil uil-eye-slash pw_hide"></i>
+          </div>
+          <div class="input_box">
+            <input type="password" placeholder="Confirm password" required />
+            <i class="uil uil-lock password"></i>
+            <i class="uil uil-eye-slash pw_hide"></i>
+          </div>
+
+          <button class="button">Signup Now</button>
+
+          <div class="login_signup">
+            Already have an account? <a href="#" id="login">Login</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
 
   <script src="/script/home_page.js"></script>
 
