@@ -1,7 +1,7 @@
 const { sq } = require("../utils/PoolConnection");
 const { DataTypes } = require("sequelize");
 
-const User = sq.define("mda_clean", {
+const User = sq.define("main_modified", {
   employee_id: {
     type: DataTypes.INTEGER,
     allowNull: false,
@@ -13,19 +13,10 @@ const User = sq.define("mda_clean", {
   dde_spoke_team: {
     type: DataTypes.INTEGER,
   },
-  pi_joined__status_: {
+  pi_joined_status: {
     type: DataTypes.STRING,
   },
   guild_team: {
-    type: DataTypes.STRING,
-  },
-  color: {
-    type: DataTypes.STRING,
-  },
-  clv_start: {
-    type: DataTypes.STRING,
-  },
-  looker_start: {
     type: DataTypes.STRING,
   },
   dob: {
@@ -37,27 +28,13 @@ const User = sq.define("mda_clean", {
   full_name: {
     type: DataTypes.STRING,
   },
-  email__gmail_: {
-    type: DataTypes.STRING,
-  },
-  email__one_: {
-    type: DataTypes.STRING,
-  },
-  email__cyberlogitec_: {
-    type: DataTypes.STRING,
-  },
   phone_number: {
     type: DataTypes.STRING,
   },
-  jira_name: {
+  picture: {
     type: DataTypes.STRING,
   },
-  jira_id: {
-    type: DataTypes.STRING,
-  },
-  github_account: {
-    type: DataTypes.STRING,
-  },
+
         
 }, {
     freezeTableName: true,
