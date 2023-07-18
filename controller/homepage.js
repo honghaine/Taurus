@@ -17,4 +17,8 @@ router.post("/signup", async(req, res) => {
   return res.redirect("home");
 })
 
+router.get("/blog", async (req, res) => {
+  return res.render("blog");
+});
+
 module.exports = router;
