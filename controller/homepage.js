@@ -13,7 +13,7 @@ router.get("/onlylooker", async (req, res) => {
 });
 
 router.post("/signup", async(req, res) => {
-  const signup = await Login.create({username: "Hectfgor", password: "hehehehfe"})
+  const signup = await Login.create({username: "Hector", password: "hehehe"})
   return res.redirect("home");
 })
 
