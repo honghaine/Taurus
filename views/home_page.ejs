@@ -104,15 +104,15 @@
       </i>
       <!-- Login From -->
       <div class="form login_form">
-        <form action="/signin">
+        <form action="/signin" method="POST">
           <h2>Login</h2>
 
           <div class="input_box">
-            <input type="text" placeholder="Enter your username" required />
+            <input name="username" type="text" placeholder="Enter your username" required />
             <i class="uil uil-envelope-alt email"></i>
           </div>
           <div class="input_box">
-            <input type="password" placeholder="Enter your password" required />
+            <input name="password" type="password" placeholder="Enter your password" required />
             <i class="uil uil-lock password"></i>
             <i class="uil uil-eye-slash pw_hide"></i>
           </div>
@@ -125,7 +125,7 @@
             <a href="#" class="forgot_pw">Forgot password?</a>
           </div>
 
-          <button class="button">Login Now</button>
+          <input type="submit" class="button">
 
           <div class="login_signup">
             Don't have an account? <a href="#" id="signup">Signup</a>

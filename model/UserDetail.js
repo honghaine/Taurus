@@ -1,5 +1,8 @@
 const { sq } = require("../utils/PoolConnection");
 const { DataTypes } = require("sequelize");
+const Comments = require('../model/Comments');
+const Posts = require('../model/Posts');
+const Likes = require('../model/Likes');
 
 const UserDetail = sq.define("users", {
     user_id: {
@@ -36,9 +39,31 @@ const UserDetail = sq.define("users", {
       timestamps: false
   });
   
-  (async () => {
-    await sq.sync();
+  UserDetail.hasMany(Comments, {
+    foreignKey: 'user_id'
+  });
+  Comments.belongsTo(UserDetail);
+
+  UserDetail.hasMany(Posts, {
+    foreignKey: 'user_id'
+  });
+  Posts.belongsTo(UserDetail);
+  
+  UserDetail.hasMany(Likes, {
+    foreignKey: 'user_id'
+  });
+  Likes.belongsTo(UserDetail);
+
+
+  // (async () => {
+  //   await sq.sync();
     
-  })();
+  // })();
+
+  sq.sync({alter: false}).then(() => {
+
+  }).catch((err) => {
+    console.log(err);
+  })
   
   module.exports = UserDetail;

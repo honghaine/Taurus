@@ -1,5 +1,7 @@
 const { sq } = require("../utils/PoolConnection");
 const { DataTypes } = require("sequelize");
+const  Likes  = require("../model/Likes");
+const UserDetail = require("./UserDetail");
 
 const Comments = sq.define(
   "comments",
@@ -27,6 +29,11 @@ const Comments = sq.define(
     timestamps: false,
   }
 );
+
+Comments.hasOne(Likes, {
+  foreignKey: "user_id",
+});
+Likes.belongsTo(Comments);
 
 (async () => {
   await sq.sync();
