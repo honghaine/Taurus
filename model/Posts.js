@@ -18,16 +18,15 @@ const Posts = sq.define(
     video: {
         type: DataTypes.STRING,
     },
-    user_id: {
+    userId: {
       type: DataTypes.INTEGER,
-    },
-    created_at: {
-      type: DataTypes.DATE,
+      field: 'user_id',
     },
   },
   {
     freezeTableName: true,
     timestamps: false,
+    createdAt: 'created_at',
   }
 );
 

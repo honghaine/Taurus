@@ -47,15 +47,15 @@
     <div class="wrapper">
       <section class="post">
         <header>Create Post</header>
-        <form action="#">
+        <form action="/blog">
           <div class="content">
             <img src="/icons/logo.png" alt="logo" width="50" height="50">
             <div class="details">
-              <p>CodingNepal</p> 
+              <p>CodingNepal<%= %></p> 
               <!-- A -->
             </div>
           </div>
-          <textarea placeholder="What's on your mind, CodingNepal?" spellcheck="false" required></textarea>
+          <textarea placeholder="What's on your mind, CodingNepal?" spellcheck="false" name="content" required></textarea>
           <div class="theme-emoji">
             <img src="/icons/theme.svg" alt="theme">
             <img src="/icons/smile.svg" alt="smile">
@@ -75,20 +75,6 @@
       </section>  
     </div>
   </div>
-
-  <script>
-    const container = document.querySelector(".container"),
-    privacy = container.querySelector(".post .privacy"),
-    arrowBack = container.querySelector(".audience .arrow-back");
-
-    privacy.addEventListener("click", () => {
-      container.classList.add("active");
-    });
-
-    arrowBack.addEventListener("click", () => {
-      container.classList.remove("active");
-    });
-  </script>
 
   <div id="mother">
     <div id="option">
@@ -124,18 +110,6 @@
             <p class="option-title">I'm concerned about this post.</p>
           </li>
         </ul>
-      </div>
-    </div>
-
-    <div class="reaction" id="emojies">
-      <div class="row">
-        <img id="e-like" src="/svg/like.svg" alt="">
-        <img id="e-love" src="/svg/love.svg" alt="">
-        <img id="e-care" src="/svg/care.svg" alt="">
-        <img id="e-haha" src="/svg/haha.svg" alt="">
-        <img id="e-wow" src="/svg/wow.svg" alt="">
-        <img id="e-sad" src="/svg/sad.svg" alt="">
-        <img id="e-angry" src="/svg/angry.svg" alt="">
       </div>
     </div>
 
@@ -253,103 +227,6 @@
       </div>
 
     </div>
-
-
-    <div class="fb-post" id="fpost2">
-
-      <!-- Top Section -->
-
-      <div class="top-s">
-        <div class="top-info">
-          <div class="profile-picture">
-            <img src="/images/soikat.jpg">
-          </div>
-          <div class="top-title">
-            <div class="profile-name">
-              <a href="#">Hector</a>
-            </div>
-            <div class="post-time">
-              <span>1h ago - </span>
-              <img src="/svg/lock.svg">
-            </div>
-          </div>
-          <div class="top-options">
-            <button>
-              <img src="/svg/three_dot.svg">
-            </button>
-          </div>
-        </div>
-        <div class="post-content">
-          Programming is great!<br /><br />
-          <img
-            src="https://thumbs.dreamstime.com/b/modern-computer-programming-code-screen-showing-random-scripts-113805394.jpg"
-            alt="">
-        </div>
-      </div>
-
-      <!-- Like section -->
-
-      <div class="like-section">
-        <div class="top-part">
-          <div class="left-part">
-            <div class="react">
-              <img src="/svg/wow.svg" alt="">
-              <img src="/svg/love.svg" alt="">
-              <img src="/svg/like.svg" alt="">
-            </div>
-            <div class="id-name">
-              <p>You, Maruf and <span>35</span> others</p>
-            </div>
-          </div>
-          <div class="right-part">
-            <p><span>0</span>Comments</p>
-          </div>
-        </div>
-        <div class="bottom-part">
-          <div class="like-btn" fpost="2">
-            <img src="/svg/thumbs-up.svg" alt="">
-            <span>Like</span>
-          </div>
-          <div class="comment-btn" fpost="2">
-            <img src="/svg/message-square.svg" alt="">
-            <span>Comment</span>
-          </div>
-          <div class="share-btn">
-            <img src="/svg/share-2.svg" alt="">
-            <span>Share</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Comment section-->
-
-      <div class="all-comments">
-        <h4>All comments <img src="/svg/sort-down.svg" class="all-comments-h4-i" alt=""></h4>
-      </div>
-
-      <div class="comment-box">
-
-      </div>
-      <div class="comment-s">
-        <div class="comment-area">
-          <div class="comment-profile-pic">
-            <img src="/images/profile-pic.jpg" alt="user">
-          </div>
-          <div class="comment-input-area">
-            <input type="text" placeholder="Write a comment..." fpost="2">
-            <!-- <div class="comment-icon">
-                <div class="icon-comment"><img src="svg/smile-1.svg" alt=""></div>
-                <div class="icon-comment"><img src="svg/camera.svg" alt=""></div>
-                <div class="icon-comment"><img src="svg/gif%20(1).svg" alt=""></div>
-                <div class="icon-comment"><img src="svg/circular-sticker.svg" alt=""></div>
-              </div> -->
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-
 
   </div>
   <script src="/script/blog.js"></script>

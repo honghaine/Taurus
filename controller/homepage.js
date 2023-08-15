@@ -19,20 +19,23 @@ router.get("/detail", async (req, res) => {
   res.render("our_team", {contents: users});
 });
 
-router.post("/signup", async(req, res) => {
-  const signup = await Login.create({username: "Hector", password: "hehehe"})
-  return res.redirect("home");
-});
-
 router.post("/signin", async(req, res) => {
   const data = req.body;
-  console.log(data);
-  return res.render("blog");
-});
+  let getDatabase;
 
-router.get("/hi", (req, res) => {
-  return res.render("hi");
-})
+  try {
+    getDatabase = await UserDetail.findOne({ where: { username: data.username } });
+  } catch (error) {
+    return res.status(403).send('Wrong Username');
+  }
+
+  if (getDatabase.passwords == data.password) {
+    return res.render("blog");
+  } else {
+    return res.status(403).send('Wrong Password');
+  }
+
+}); 
 
 router.get("/blog", async (req, res) => {
   return res.render("blog");
@@ -42,10 +45,13 @@ router.post("/blog", async (req, res) => {
   const data = req.body ;
 
   console.log(data.user_id);
-  console.log(data);
-  Posts.create({
-    data
-  })
+  const a = await Posts.create({
+    post_id: 123,
+    text: data.text,
+    userId: data.user_id,
+    created_at: new Date(),
+  });
+  await a.save();
   return res.render("blog");
 });
 

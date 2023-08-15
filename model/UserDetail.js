@@ -13,7 +13,7 @@ const UserDetail = sq.define("users", {
     username: {
       type: DataTypes.STRING,
     },
-    password: {
+    passwords: {
       type: DataTypes.STRING,
     },
     email: {

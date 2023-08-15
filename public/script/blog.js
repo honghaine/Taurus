@@ -4,6 +4,7 @@ function qsa(elem) {return document.querySelectorAll(elem);}
 
 // globals
 hovered_btn_id = 0;
+let like_status = 0;
 
 // elements
 const
@@ -15,6 +16,7 @@ comment_boxs = qsa(".comment-box"),
 comment_btns = qsa(".comment-btn"),
 like_btns = qsa(".like-btn"),
 emojies = qsa("#emojies img");
+
 
 // functions
 function getOffset(el) {
@@ -130,37 +132,16 @@ window.addEventListener('load', function() {
 	qs("#mother").style.display = "block";
 	qs("#js-error").style.display = "none";
 	
-	opt_btns.forEach(btn => {
-		btn.addEventListener("click", (e)=>{
-			toggle_option(btn);
-		});
-	});
-	comment_inputs.forEach(input => {
-		input.addEventListener("change", (e)=>{
-			makeComment(input.value, input.getAttribute("fpost"));
-			input.value = "";
-		});
-	});
-	comment_btns.forEach(button => {
-		button.addEventListener("click", (e)=>{
-			qs("#fpost" + button.getAttribute("fpost")).querySelector("input").focus();
-		});
-	});
-	like_btns.forEach(button => {
-		button.addEventListener("mouseover", (e)=>{
-			hovered_btn_id = button.getAttribute("fpost");
-			toggle_reaction(button);
-		});
-		button.addEventListener("mouseout", (e)=>{
-			toggle_reaction(button);
-		});
-		button.addEventListener("click", (e)=>{		
-			placeLIke("e-like", hovered_btn_id);
-		});	
-	});
-	emojies.forEach(emoji => {
-		emoji.addEventListener("click", (e)=>{
-			placeLIke(emoji.getAttribute("id"), hovered_btn_id);
-		});
-	});
+
 });
+
+like_btns.forEach(like => {
+	like.addEventListener("click", () => {
+		
+		console.log(like.style);
+		console.log("Hello World");
+		placeLIke("e-like", hovered_btn_id);
+		console.log(like.style);
+	});
+})
+
