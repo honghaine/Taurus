@@ -692,3 +692,6 @@ form textarea:valid ~ button:hover{
 .list li.active .radio::before{
   background: #4599FF;
 }
+.navbar-right menu{
+  width: 650px;
+}

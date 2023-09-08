@@ -1,170 +1,49 @@
 <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="/styles/home_page.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+  </head>
+  <body>
+    <%- include('./includes/navbar.ejs') %>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
-  <link rel="stylesheet" href="/styles/home_page.css">
-</head>
+    <div class="looker">
+      <div class="content">
+        <div>
+          <h1>
+            Build with the<br />
+            Looker Platform
+          </h1>
+          <p>
+            Enhance your own workflows with Looker, or build extensions<br />
+            on the Looker platform for the rest of the world.
+          </p>
+        </div>
+        <div class="search-box">
+          <input
+            class="search-input"
+            type="search"
+            placeholder="Search for Looker content"
+          />
+        </div>
+      </div>
 
-<body scroll="no" style="overflow: hidden">
-  <div id="topnav" class="navbar">
-    <a href="#" class="logo">
-      LOOK
-      <span style="color: red">E</span>
-      <span style="color: orange">R</span>
-    </a>
-    <div class="navbar-right menu">
-      <a href="home" class="active">
-        Home
-      </a>
-      <a href="blog">
-        Blog
-      </a>
-      <a href="#">
-        Career
-      </a>
-      <a href="onlylooker">
-        Our Team
-      </a>
-      <a href="#">
-        Contact
-      </a>
-      <button class="button" id="form-open">Login</button>
-    </div>
-    <div class="navbar-right">
-      <a href="javascript:void(0);" class="icon" onclick="showMenu()">
-        <i class="fa fa-bars"></i>
-      </a>
-    </div>
-  </div>
-
-  <div id="slideshow-container" class="slideshow-container">
-    <div class="slide-item bgimg fade" style="background-image: url('/images/2.jpeg');">
-      <div class="caption">
-        <h2>
-          Looker
-        </h2>
-        <p>
-          We use Looker to helps clients explore, share, and visualize their company's data so
-          <br>that they can make better business decisions.
-        </p>
-        <button>
-          About us
-        </button>
+      <div class="represent">
+        <img src="/svg/looker_logo.svg" alt="looker_logo" />
       </div>
     </div>
 
-    <div class="slide-item bgimg fade" style="background-image: url('/images/3.jpg');">
-      <div class="caption">
-        <h2>
-          Looker
-        </h2>
-        <p>
-          We use Looker to helps clients explore, share, and visualize their company's data so
-          <br>that they can make better business decisions.
-        </p>
-        <button>
-          About us
-        </button>
-      </div>
-    </div>
+    <%- include('./includes/login_signup.ejs') %>
 
-    <div class="slide-item bgimg fade" style="background-image: url('images/1.jpeg');">
-      <div class="caption">
-        <h2>
-          Looker
-        </h2>
-        <p>
-          We use Looker to helps clients explore, share, and visualize their company's data so
-          <br>that they can make better business decisions.
-        </p>
-        <button>
-          About us
-        </button>
-      </div>
-    </div>
-
-    <div id="slide-control" class="slide-control">
-      <span class="dot" onclick="chooseSlide(0)"></span>
-      <span class="dot" onclick="chooseSlide(1)"></span>
-      <span class="dot" onclick="chooseSlide(2)"></span>
-    </div>
-  </div>
-
-  <!-- Home -->
-  <section class="home">
-    <div class="form_container">
-      <i class="uil uil-times form_close">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-          <path fill="currentColor"
-            d="m13.41 12l4.3-4.29a1 1 0 1 0-1.42-1.42L12 10.59l-4.29-4.3a1 1 0 0 0-1.42 1.42l4.3 4.29l-4.3 4.29a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0l4.29-4.3l4.29 4.3a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.42Z" />
-        </svg>
-      </i>
-      <!-- Login From -->
-      <div class="form login_form">
-        <form action="/signin" method="POST">
-          <h2>Login</h2>
-
-          <div class="input_box">
-            <input name="username" type="text" placeholder="Enter your username" required />
-            <i class="uil uil-envelope-alt email"></i>
-          </div>
-          <div class="input_box">
-            <input name="password" type="password" placeholder="Enter your password" required />
-            <i class="uil uil-lock password"></i>
-            <i class="uil uil-eye-slash pw_hide"></i>
-          </div>
-
-          <div class="option_field">
-            <span class="checkbox">
-              <input type="checkbox" id="check" />
-              <label for="check">Remember me</label>
-            </span>
-            <a href="#" class="forgot_pw">Forgot password?</a>
-          </div>
-
-          <input type="submit" class="button">
-
-          <div class="login_signup">
-            Don't have an account? <a href="#" id="signup">Signup</a>
-          </div>
-        </form>
-      </div>
-
-      <!-- Signup From -->
-      <div class="form signup_form">
-        <form action="/signup" method="POST">
-          <h2>Signup</h2>
-
-          <div class="input_box">
-            <input type="text" placeholder="Enter your username" required />
-            <i class="uil uil-envelope-alt email"></i>
-          </div>
-          <div class="input_box">
-            <input type="password" placeholder="Create password" required />
-            <i class="uil uil-lock password"></i>
-            <i class="uil uil-eye-slash pw_hide"></i>
-          </div>
-          <div class="input_box">
-            <input type="password" placeholder="Confirm password" required />
-            <i class="uil uil-lock password"></i>
-            <i class="uil uil-eye-slash pw_hide"></i>
-          </div>
-
-          <button class="button">Signup Now</button>
-
-          <div class="login_signup">
-            Already have an account? <a href="#" id="login">Login</a>
-          </div>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <script src="/script/home_page.js"></script>
-
-</body>
-
+    <script src="/script/home_page.js"></script>
+  </body>
 </html>

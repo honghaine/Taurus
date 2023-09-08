@@ -5,14 +5,18 @@ const Login = require("../model/Login");
 const UserDetail = require('../model/UserDetail');
 const Posts = require("../model/Posts");
 
-router.get("/home", async (req, res) => {
+router.get("/", async (req, res) => {
   res.render("home_page");
 });
 
-router.get("/onlylooker", async (req, res) => {
+router.get("/team", async (req, res) => {
   const users = await User.findAll();
   res.render("our_team", {contents: users});
 });
+
+router.get("/achievement", async (req, res) => {
+  return res.render("achievement");
+})
 
 router.get("/detail", async (req, res) => {
   const users = await UserDetail.findAll();
@@ -44,15 +48,18 @@ router.get("/blog", async (req, res) => {
 router.post("/blog", async (req, res) => {
   const data = req.body ;
 
-  console.log(data.user_id);
-  const a = await Posts.create({
+  const blog = await Posts.create({
     post_id: 123,
     text: data.text,
     userId: data.user_id,
     created_at: new Date(),
   });
-  await a.save();
+  await blog.save();
   return res.render("blog");
 });
+
+router.get("/timeline", async (req, res) => {
+  return res.render("timeline");
+})
 
 module.exports = router;

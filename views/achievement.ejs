@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="/styles/achievement.css" />
+  </head>
+  <body>
+    <%- include('./includes/navbar.ejs') %>
+
+    <div>
+      <div class="description">
+        <h1>Achievement</h1>
+        <h2>Team Merit</h2>
+        <p>
+          After getting Team Merit pride, individuals and teams often experience a
+          range of emotions and reactions.<br />
+          There is a sense of satisfaction and fulfillment that comes with<span
+            id="dots"
+            >...</span
+          ><span id="more">
+            achieving a shared goal and being<br />
+            recognized for one's contributions to the team's success. <br />
+            Getting Team Merit pride can also serve as a powerful motivator for
+            future success. It can inspire individuals<br />
+            and teams to continue to work hard and strive for even greater
+            achievements in the future.<br />
+            Team Merit pride is a significant accomplishment that can have a
+            lasting impact on individuals and teams.<br />
+            It is a reminder of the power of collaboration, the importance of hard
+            work and dedication, and the rewards<br />
+            that can come from working towards a shared goal.</span
+          >
+        </p>
+        <button onclick="myFunction()" id="myBtn">Read more</button>
+      </div>
+      <div class="picture">
+        <div class="top">
+          <img src="/svg/red.svg" class="dot" alt="red" />
+          <img src="/svg/yellow.svg" class="dot" alt="yellow" />
+          <!-- <img src="../svg/green.svg" class="dot" alt="green" /> -->
+        </div>
+        <div class="screen"></div>
+        <div class="image">
+          <img src="/images/CLV2.jpeg" alt="CLV3" />
+          <img src="/images/CLV3.jpeg" alt="CLV2" />
+          <!-- <img src="../assets/CLV1.jpg" alt="CLV1" /> -->
+        </div>
+      </div>
+    </div>
+
+
+    <%- include('./includes/login_signup.ejs') %>
+
+    <script src="/script/achievement.js"></script>
+  </body>
+</html>
