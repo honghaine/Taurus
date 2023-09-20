@@ -1,8 +1,38 @@
-body{
+:root {
+	--text: #031207;
+	--background: #e0fae7;
+	--primary: #5d0e48;
+	--secondary: #f7d9ce;
+	--accent: #d822a8;
+  
+	/* --text: #000000;
+	  --background: #f1effb;
+	  --primary: #c9de7c;
+	  --secondary: #d8f3ce;
+	  --accent: #c49a31; */
+  
+	/* --text: #551a8b;
+		--background: #f3f6fa;
+		--primary: #3c64b1;
+		--secondary: #e8edf6;
+		--accent: #d822a8; */
+  }
+  
+  body,
+  html {
+	font-family: "Ubuntu", sans-serif;
+	margin: 0;
+	height: 100%;
+	width: 100%;
+	background: #f3f6fa;
+    color: #bcd0f7; 
+  }
+  
+
+/* body{
     margin-top:20px;
-    color: #bcd0f7;
     background: #1A233A;
-}
+} */
 .timeline {
     position: relative;
     background: #272e48;

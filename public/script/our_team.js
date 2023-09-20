@@ -1,17 +1,9 @@
 const wrapper = document.querySelector('.card')
 
-
-
-
-
 let chart
 const seeChart = (id, name) => {
     console.log(name)
 }
-
-
-
-
 
 const createChart = () => {
     const ctx = document.getElementById('myChart');

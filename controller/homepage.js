@@ -12,6 +12,7 @@ router.get("/", async (req, res) => {
 router.get("/team", async (req, res) => {
   const users = await User.findAll();
   res.render("our_team", {contents: users});
+  // res.json({contents: users});
 });
 
 router.get("/achievement", async (req, res) => {

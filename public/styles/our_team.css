@@ -12,7 +12,7 @@ body {
     background: #161623;
 }
 
-.navbar {
+/* .navbar {
     width: 85%;
     margin: auto;
     padding: 35px 0;
@@ -47,7 +47,7 @@ body {
 
 .navbar ul li:hover::after {
     width: 100%;
-}
+} */
 
 .container {
     position: relative;
