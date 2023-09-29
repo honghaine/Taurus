@@ -12,19 +12,8 @@
 <body>
     <%- include('./includes/navbar.ejs') %>
     <section>
-        <!-- <div class="banner">
-            <div class="navbar">
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/">Services</a></li>
-                    <li><a href="/">Careers</a></li>
-                    <li><a href="/">Our Team</a></li>
-                    <li><a href="/">Contact</a></li>
-                </ul>
-            </div>
-        </div> -->
         <div class="container">
-            <% for(const content of contents) {%>
+            <!-- <% for(const content of contents) {%>
                 <div class="card" >
                     <div class="content" id="<%= content.employee_id %>" onclick="seeChart(this)">
                         <div class="imgBx"><img src="<%= content.picture %>"></div>
@@ -33,7 +22,25 @@
                         </div>
                     </div>
                 </div>
-                <!-- <canvas id="myChart" style="background-color: white;" ></canvas> -->
+            <% } %> -->
+            <% for(const content of contents) {%>
+              <div class="card">
+                <div class="content">
+                  <div class="back">
+                    <div class="back-content" >
+                      <div class="imgBx"><img src="<%= content.picture %>"></div>
+                      <div class="contentBx">
+                          <h3><%= content.name %><br><span>Developer</span></h3>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="front">
+                    <div class="front-content" onmouseover="seeChart(this)">
+                      <canvas id="radarChart"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
             <% } %>
         </div>
     </section>
@@ -44,33 +51,3 @@
 </html>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="/script/our_team.js"></script>
-<script>
-
-
-
-
-
-</script>
-<!-- <script>
-    const ctx = document.getElementById('myChart');
-  
-    new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-        datasets: [{
-          label: '# of Votes',
-          data: [12, 19, 3, 5, 2, 3],
-          borderWidth: 1
-        }]
-      },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true
-          }
-        }
-      }
-    });
-  </script> -->
-  

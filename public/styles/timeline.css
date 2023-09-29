@@ -132,6 +132,8 @@
 .timeline-row .timeline-content .thumbs {
     margin-bottom: 20px;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 .timeline-row .timeline-content .thumbs img {
     margin: 5px;

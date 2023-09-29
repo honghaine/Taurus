@@ -24,43 +24,45 @@ router.get("/detail", async (req, res) => {
   res.render("our_team", {contents: users});
 });
 
-router.post("/signin", async(req, res) => {
-  const data = req.body;
-  let getDatabase;
+// router.post("/signin", async(req, res) => {
+//   const data = req.body;
+//   let getDatabase;
 
-  try {
-    getDatabase = await UserDetail.findOne({ where: { username: data.username } });
-  } catch (error) {
-    return res.status(403).send('Wrong Username');
-  }
+//   try {
+//     getDatabase = await UserDetail.findOne({ where: { username: data.username } });
+//   } catch (error) {
+//     return res.status(403).send('Wrong Username');
+//   }
 
-  if (getDatabase.passwords == data.password) {
-    return res.render("blog");
-  } else {
-    return res.status(403).send('Wrong Password');
-  }
+//   if (getDatabase.passwords == data.password) {
+//     return res.render("blog");
+//   } else {
+//     return res.status(403).send('Wrong Password');
+//   }
 
-}); 
+// }); 
 
 router.get("/blog", async (req, res) => {
   return res.render("blog");
 });
 
-router.post("/blog", async (req, res) => {
-  const data = req.body ;
+// router.post("/blog", async (req, res) => {
+//   const data = req.body ;
 
-  const blog = await Posts.create({
-    post_id: 123,
-    text: data.text,
-    userId: data.user_id,
-    created_at: new Date(),
-  });
-  await blog.save();
-  return res.render("blog");
-});
+//   const blog = await Posts.create({
+//     post_id: 123,
+//     text: data.text,
+//     userId: data.user_id,
+//     created_at: new Date(),
+//   });
+//   await blog.save();
+//   return res.render("blog");
+// });
 
 router.get("/timeline", async (req, res) => {
-  return res.render("timeline");
+  const users = await UserDetail.findAll();
+  return res.render("timeline", {contents: users});
+  // return res.render("timeline");
 })
 
 module.exports = router;
