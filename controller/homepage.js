@@ -1,17 +1,18 @@
 const express = require("express");
 const router = express.Router();
-const User = require('../model/User');
-const Login = require("../model/Login");
-const UserDetail = require('../model/UserDetail');
-const Posts = require("../model/Posts");
+const data = require('../env/data.json');
+// const User = require('../model/User');
+// const Login = require("../model/Login");
+// const UserDetail = require('../model/UserDetail');
+// const Posts = require("../model/Posts");
 
 router.get("/", async (req, res) => {
   res.render("home_page");
 });
 
 router.get("/team", async (req, res) => {
-  const users = await User.findAll();
-  res.render("our_team", {contents: users});
+  // const users = await User.findAll();
+  res.render("our_team", {contents: data});
   // res.json({contents: users});
 });
 
@@ -20,8 +21,8 @@ router.get("/achievement", async (req, res) => {
 })
 
 router.get("/detail", async (req, res) => {
-  const users = await UserDetail.findAll();
-  res.render("our_team", {contents: users});
+  // const users = await UserDetail.findAll();
+  // res.render("our_team", {contents: users});
 });
 
 // router.post("/signin", async(req, res) => {
@@ -60,8 +61,10 @@ router.get("/blog", async (req, res) => {
 // });
 
 router.get("/timeline", async (req, res) => {
-  const users = await UserDetail.findAll();
-  return res.render("timeline", {contents: users});
+  // const users = await UserDetail.findAll();
+  // res.render("our_team", {contents: data});
+
+  return res.render("timeline", {contents: data});
   // return res.render("timeline");
 })
 

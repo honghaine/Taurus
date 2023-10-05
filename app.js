@@ -1,6 +1,6 @@
 const express = require("express");
 const path = require("path");
-const db = require("./utils/PoolConnection");
+// const db = require("./utils/PoolConnection");
 
 const app = express();
 
@@ -28,7 +28,7 @@ app.use((err, req, res, next) => {
 // Establish database connection and start the server
 (async () => {
   try {
-    const connect = db.testDbConnection;
+    // const connect = db.testDbConnection;
     console.log("Connection has been established successfully.");
     app.listen(3001, () => {
       console.log("Server listening on port 3001");
